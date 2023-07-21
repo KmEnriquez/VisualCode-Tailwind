@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    @apply mx-auto max-w-[70rem] w-full;
+}
+
+
+@layer components {
+    .header.active {
+        @apply shadow-[0_3px_3px_0_rgba(0,0,0,.33)] transition-all duration-[.5s] ease-out
+    }
+
+    .header .header__nav {
+        @apply mr-[0rem] absolute max-h-[0rem] overflow-hidden left-0 top-[2.8rem] w-full bg-[#2C2C32] duration-[.8s] ease-in-out
+        md:static md:w-fit md:max-h-fit z-[100]
+    }
+
+    .header .header__nav.open {
+        @apply max-h-[21.6rem] overflow-y-scroll transition-all duration-[.8s] md:overflow-y-hidden
+    }
+
+    .platform {
+    @apply before:content-[""] before:absolute before:w-0 before:h-0 before:border-l-[10px] before:border-l-transparent before:border-r-transparent before:border-r-[10px] before:border-b-[10px] before:border-b-[#25252b] before:top-[-10px] before:right-[11px]
+    }
+
+    .footer__platform {
+    @apply before:content-[""] before:absolute before:w-0 before:h-0 before:border-t-[4px] before:border-t-transparent before:border-b-transparent before:border-b-[4px] before:border-r-[4px] before:border-r-white before:top-[5px] before:left-[-3px]
+    }
+
+    .hero .downloaders {
+        @apply bg-[#f2f2f2]
+    }
+    .hero .downloaders.drop {
+        @apply block
+    }
+    .hero .downloaders .dltable td {
+        @apply px-1
+    }
+    .cta.open {
+    @apply block;
+    }
+}
+
+
+.swimlane .swimlane__item:nth-child(odd) {
+    @apply bg-[#fff]
+}
+
+.swimlane .swimlane__item:nth-child(even) {
+    @apply bg-[#f5f5f5]
+}
+
+.swimlane .swimlane__item:nth-child(odd) .swimlane__content{
+    @apply flex flex-col items-center md:flex md:flex-row 
+}
+
+.swimlane .swimlane__item:nth-child(even) .swimlane__content{
+    @apply flex flex-col items-center md:flex md:flex-row-reverse 
+}
+
+.swimlane .swimlane__item{
+    @apply px-[1rem] flex md:items-start
+}
+
+.swimlane .swimlane__content{
+    @apply py-[2rem] md:mx-auto md:max-w-[70rem] md:gap-[6rem] md:justify-center md:py-[4.5rem] 
+}
+
+.swimlane .swimlane__content img {
+    @apply py-[2rem] object-cover max-w-[21rem] md:max-w-[30%] md:py-0
+}
+
+.swimlane .swimlane__content .swimlane__text h1 {
+    @apply pb-[2rem] md:text-[1.5rem]  md:ml-0  flex md:justify-start
+}
+
+.swimlane .swimlane__content .swimlane__text p {
+    @apply pb-[2rem] leading-10 text-[.9rem] md:text-[1rem] md:max-w-[38rem] md:ml-0
+}
+
+
+.tns-outer {
+    @apply relative
+}
+
+.tns-item {
+    @apply md:!inline-flex md:gap-[1rem]
+}
+.tns-controls {
+    @apply absolute flex items-center justify-between w-[90%] md:w-[104%] left-[1.5rem] z-10 top-[9.5rem] md:top-[4rem] md:left-[-1.2rem] lg:left-[-1.2rem] lg:top-[3rem]
+}
+.tns-controls button {
+    @apply text-[#7a7a7e] hover:opacity-70 text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]
+}
+
